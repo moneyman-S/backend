@@ -19,5 +19,6 @@ defmodule Moneyman.User do
     user
     |> cast(attrs, [:name, :username, :email, :password_hash, :accepted_terms])
     |> validate_required([:name, :username, :email, :password_hash, :accepted_terms])
+    |> unique_constraint([:email, :username])
   end
 end
