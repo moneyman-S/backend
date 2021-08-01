@@ -57,6 +57,10 @@ config :moneyman, MoneymanWeb.Endpoint,
     ]
   ]
 
+config :moneyman, MyApp.Guardian,
+   issuer: "moneyman",
+   secret_key: "ZZf0hFlI39Wh4E+JnxYbZhnNTU4zq+ZKtvggrq9iJoDxt14m/NzKSi/ixE1OrpZO"
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
