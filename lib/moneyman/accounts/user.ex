@@ -1,6 +1,18 @@
-defmodule Moneyman.User do
+defmodule Moneyman.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
+
+  @type t :: %User{
+    name: String.t(),
+    username: String.t(),
+    password_hash: String.t(),
+    email: String.t(),
+    accepted_terms: boolean()
+  }
+
+  @type changeset :: %Ecto.Changeset{
+    data: %User{},
+  }
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
